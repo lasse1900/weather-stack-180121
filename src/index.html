@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        navigator.geolocation.getCurrentPosition(async position => {
-            const { latitude: lat, longitude: long } = position.coords
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const { latitude: lat, longitude: long } = position.coords;
 
-            fetch(`/.netlify/functions/fetch-weather?lat=${lat}&long=${long}`)
-                .then(res => { console.log(response.json()) })
-        })
+        fetch(`/.netlify/functions/fetch-weather?lat=${lat}&long=${long}`).then(
+          (res) => {
+            console.log(response.json());
+          }
+        );
+      });
     </script>
-</body>
-
+  </body>
 </html>
